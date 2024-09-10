@@ -16,8 +16,7 @@ def index():
 def submit():
     # Handle form submission
     user_answers = request.form
-    #result = 
-    return render_template('result.html', result=result)
+    return render_template('result.html', result=user_answers)
 
 if __name__ == '__main__':
     app.run(debug=True)
