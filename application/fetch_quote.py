@@ -7,6 +7,15 @@ def get_bb_quote() -> QuoteContext:
     return q 
 
 
+
+
+
+
+
+
+
+
+
 def get_got_quote() -> QuoteContext:
     r = requests.get('https://api.gameofthronesquotes.xyz/v1/random').json()
     q = QuoteContext(r['sentence'], r['character']['name'] + " of " + r['character']['house']['name'], 'Game of Thrones')
