@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citatquiz</title>
+</head>
+<body>
+    <h1>Varifrån kommer citatet?</h1>
+    <form action="/submit" method="post">
+            <fieldset>
+                <legend>{{ quote }}</legend>
+                {% for source in sources %}
+                    <label>
+                        <input type="radio" name="source" value="{{ source }}" required>
+                        {{ source }}
+                    </label><br>
+                {% endfor %}
+            </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
