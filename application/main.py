@@ -28,8 +28,3 @@ match answer.lower().strip():
         print_output(q.author, q.source, truth_value)
     case _:
         print("Felaktig input.")
-#if answer.lower().strip() == q.source.lower().strip():
-#    print("Rätt svar!, Author: " + q.author)
-#else:
-#    print("Fel svar!")
-
