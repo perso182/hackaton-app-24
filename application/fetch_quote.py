@@ -13,7 +13,7 @@ def get_quote() -> QuoteContext:
 
 def get_got_quote() -> QuoteContext:
     r = requests.get('https://api.gameofthronesquotes.xyz/v1/random').json()
-    q = QuoteContext(r['sentence'], r['character']['name'] + " of " + r['character']['house']['name'], 'Game of Thrones')
+    q = QuoteContext(r['sentence'], r['character']['name'], 'Game of Thrones')
     return q
     
 def get_stranger_things_quote() -> QuoteContext:
