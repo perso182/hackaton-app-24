@@ -34,7 +34,7 @@ def submit():
 
     params = parse.urlencode({
     "q": game.get_author_of_quote(),
-    "api_key": "9mt6qkZfIWCX5KrFgA8u2RZjquY2B6Zd",
+    "api_key": "",
     "limit": "1"
     })
     with re.urlopen("".join((url, "?", params))) as response:
