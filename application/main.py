@@ -1,13 +1,30 @@
 import requests
 from fetch_quote import *
 from QuoteContext import *
-q = get_quote()
+from Game import *
+#q = get_quote()
 
-print(q.source)
+#print(q.source)
 
-answer = input("Gissa från vilken serie detta citat är: \n" + "\"" + q.quote + "\"\n" + "1: Breaking Bad\n2: Stranger Things \n3: Game of Thrones. \n")
+#answer = input("Gissa från vilken serie detta citat är: \n" + "\"" + q.quote + "\"\n" + "1: Breaking Bad\n2: Stranger Things \n3: Game of Thrones. \n")
 
-correct_answer = q.source
+nr_of_rounds = 3
+game = Game(nr_of_rounds)
+
+while game.get_current_round() < game.get_max_rounds():
+    quote = game.next_round()
+    answer = input("Gissa från vilken serie detta citat är: \n" + "\"" + quote + "\"\n" + "1: Breaking Bad\n2: Stranger Things \n3: Game of Thrones. \n")
+    if game.check_answer(int(answer)):
+        print("Rätt! Author: " + game.get_author_of_quote())
+    else:
+        print("FEL! Rätt svar är: " + game.get_correct_source())
+
+print("Score: " + str(game.get_score()))
+
+
+
+
+#correct_answer = q.source
 
 def print_output(author, truth_value):
     if(truth_value == True):
@@ -15,21 +32,4 @@ def print_output(author, truth_value):
     else:
         print("Fel svar!")
 
-
-match answer.lower().strip():
-    case "1": 
-        truth_value = (correct_answer.lower() == "Breaking Bad".lower()) 
-        print_output(q.author, truth_value)
-    case "2": 
-        truth_value = correct_answer.lower() == "Stranger Things".lower() 
-        print_output(q.author, truth_value)    
-    case "3": 
-        truth_value = correct_answer.lower() == "Game of Thrones".lower()
-        print_output(q.author, truth_value)
-    case _:
-        print("Felaktig input.")
-#if answer.lower().strip() == q.source.lower().strip():
-#    print("Rätt svar!, Author: " + q.author)
-#else:
-#    print("Fel svar!")
 
