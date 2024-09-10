@@ -16,7 +16,7 @@ class Game:
         # Returnerar nästa quotecontext och incremnterar current round
         return 
     
-    def check_answer(self, answer: int):
+    def check_answer(self, answer: str):
         match answer:
             case 1: 
                 if(self.current_quote.source.lower() == "Breaking Bad".lower()):
@@ -55,3 +55,10 @@ class Game:
     
     def get_author_of_quote(self):
         return self.current_quote.author
+    
+    def check_answer_online(self, answer: str):
+        if answer.lower() == self.current_quote.source.lower():
+            self.score += 1
+            return True
+        else:
+            return False
