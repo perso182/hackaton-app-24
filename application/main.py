@@ -5,7 +5,7 @@ q = get_quote()
 
 print(q.source)
 
-answer = input("Gissa från vilken serie detta citat är: \n" + "\"" + q.quote + "\"\n" + "1: Breaking Bad\n 2: Stranger Things \n3: Game of Thrones. \n")
+answer = input("Gissa från vilken serie detta citat är: \n" + "\"" + q.quote + "\"\n" + "1: Breaking Bad\n2: Stranger Things \n3: Game of Thrones. \n")
 
 correct_answer = q.source
 
