@@ -62,3 +62,7 @@ class Game:
             return True
         else:
             return False
+
+    def restart_game(self):
+        self.score = 0
+        self.current_round = 0
