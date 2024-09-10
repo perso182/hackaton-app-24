@@ -9,23 +9,23 @@ answer = input("Gissa från vilken serie detta citat är: \n" + "\"" + q.quote +
 
 correct_answer = q.source
 
-def print_output(author, truth_value):
+def print_output(author, source, truth_value):
     if(truth_value == True):
         print("Rätt svar!, Author: " + author)
     else:
-        print("Fel svar!")
+        print("Fel svar!, Author: " + author + " (" + source + ")")
 
 
 match answer.lower().strip():
     case "1": 
         truth_value = (correct_answer.lower() == "Breaking Bad".lower()) 
-        print_output(q.author, truth_value)
+        print_output(q.author, q.source, truth_value)
     case "2": 
         truth_value = correct_answer.lower() == "Stranger Things".lower() 
-        print_output(q.author, truth_value)    
+        print_output(q.author, q.source, truth_value)    
     case "3": 
         truth_value = correct_answer.lower() == "Game of Thrones".lower()
-        print_output(q.author, truth_value)
+        print_output(q.author, q.source, truth_value)
     case _:
         print("Felaktig input.")
 #if answer.lower().strip() == q.source.lower().strip():
